@@ -467,10 +467,19 @@ local function GetIcons()
 	EnsureStorage()
 
 	local Success, Response = pcall(function()
-		return request({
+		local HttpRequest = request or http_request or syn.request
+
+		if not HttpRequest then
+			warn("No HTTP request function found")
+			return
+		end
+
+		local Response = HttpRequest({
 			Url = Api,
 			Method = "GET",
-			Headers = {["User-Agent"] = "Roblox"}
+			Headers = {
+				["User-Agent"] = "Roblox"
+			}
 		})
 	end)
 
