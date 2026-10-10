@@ -15,7 +15,7 @@ local IsMobileDevice = UserInputService.TouchEnabled and not UserInputService.Mo
  
 local AvUI = {}
 AvUI.__index = AvUI
-AvUI.Version = "1.0.0"
+AvUI.Version = "2.8.1"
 AvUI.Flags = {}
 AvUI._Windows = {}
  
